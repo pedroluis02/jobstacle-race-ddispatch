@@ -1,2 +1,3 @@
 # Obstacle Race Game
-Samples for double dispatch technique
+Samples for double dispatch technique:
+* Table driven methods
