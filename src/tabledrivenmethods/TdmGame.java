@@ -1,19 +1,22 @@
 package tabledrivenmethods;
 
+import shared.Game;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Game {
-
+public class TdmGame implements Game {
     RaceCar car;
-    List <GameObject> objects;
+    List <TdmObject> objects;
 
-    public Game() {
+    public TdmGame() {
         init();
     }
 
-    private void init() {
+
+    @Override
+    public void init() {
         car = new RaceCar("Lightning McQueen", 2);
         objects = new ArrayList<>() {{
             add(new FreeBlock());
@@ -25,11 +28,12 @@ public class Game {
         }};
     }
 
+    @Override
     public void start() {
         System.out.println("Race starting: " + car + "\n");
-        final Iterator<GameObject> it = objects.iterator();
+        final Iterator<TdmObject> it = objects.iterator();
         do {
-            GameObject d = it.next();
+            TdmObject d = it.next();
             car.collideWith(d);
             d.collideWith(car);
         } while (it.hasNext());

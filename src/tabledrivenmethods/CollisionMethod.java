@@ -1,6 +1,6 @@
 package tabledrivenmethods;
 
 @FunctionalInterface
-public interface CollitionHandler <T> {
+public interface CollisionMethod<T> {
     void collideWith(T object);
 }

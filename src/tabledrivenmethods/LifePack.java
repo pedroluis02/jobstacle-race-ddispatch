@@ -1,18 +1,11 @@
 package tabledrivenmethods;
 
-public class LifePack extends GameObject {
-
+public class LifePack extends TdmObject {
     private final int quantity;
 
     public LifePack(int quantity) {
         super("Life Pack");
-
         this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return getName() + " (lives=" + getQuantity() + ")";
     }
 
     public int getQuantity() {
@@ -20,8 +13,13 @@ public class LifePack extends GameObject {
     }
 
     @Override
-    public void initCollisionMap() {
-        addCollisionObject(RaceCar.class, this::collideWithCard);
+    public String toString() {
+        return getName() + " (lives=" + getQuantity() + ")";
+    }
+
+    @Override
+    protected void registerCollisions() {
+        addCollisionWith(RaceCar.class, this::collideWithCard);
     }
 
     private void collideWithCard(RaceCar object) {

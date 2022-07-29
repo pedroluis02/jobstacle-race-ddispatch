@@ -1,10 +1,6 @@
 package tabledrivenmethods;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class RaceCar extends GameObject {
-
+public class RaceCar extends TdmObject {
     private int lives;
     private int damage;
 
@@ -20,10 +16,10 @@ public class RaceCar extends GameObject {
     }
 
     @Override
-    public void initCollisionMap() {
-        addCollisionObject(FreeBlock.class, this::collideWithFreeBock);
-        addCollisionObject(LifePack.class, this::collideWithLifePack);
-        addCollisionObject(Obstacle.class, this::collideWithObstacle);
+    protected void registerCollisions() {
+        addCollisionWith(FreeBlock.class, this::collideWithFreeBock);
+        addCollisionWith(LifePack.class, this::collideWithLifePack);
+        addCollisionWith(Obstacle.class, this::collideWithObstacle);
     }
 
     private void collideWithFreeBock(FreeBlock object) {
