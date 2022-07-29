@@ -1,9 +1,9 @@
 package visitorpattern;
 
-import shared.BaseGameObject;
+import shared.GameObject;
 
-public abstract class GameObject extends BaseGameObject {
-    public GameObject(String name) {
+public abstract class VpObject extends GameObject {
+    public VpObject(String name) {
         super(name);
     }
 
