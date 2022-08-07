@@ -14,7 +14,6 @@ public class TdmGame implements Game {
         init();
     }
 
-
     @Override
     public void init() {
         car = new RaceCar("Lightning McQueen", 2);
@@ -39,5 +38,4 @@ public class TdmGame implements Game {
         } while (it.hasNext());
         System.out.println("\nRace ending: " + car);
     }
-
 }

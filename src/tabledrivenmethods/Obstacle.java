@@ -19,10 +19,10 @@ public class Obstacle extends TdmObject {
 
     @Override
     protected void registerCollisions() {
-        addCollisionWith(RaceCar.class, this::collideWithCard);
+        addCollisionWith(RaceCar.class, this::collideWithCar);
     }
 
-    private void collideWithCard(RaceCar object) {
+    private void collideWithCar(RaceCar object) {
         System.out.println(getName() + " was crashed by " + object);
     }
 }
