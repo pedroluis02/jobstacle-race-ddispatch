@@ -1,7 +1,7 @@
 package visitorpattern;
 
 public class RaceCar extends VpObject {
-    public RaceCar(String name, int lives) {
+    public RaceCar(String name) {
         super(name);
     }
 

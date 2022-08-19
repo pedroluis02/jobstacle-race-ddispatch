@@ -16,7 +16,7 @@ public class VpGame implements Game {
 
     @Override
     public void init() {
-        car = new RaceCar("Lightning McQueen", 2);
+        car = new RaceCar("Lightning McQueen");
         objects = new ArrayList<>() {{
             add(new FreeBlock());
             add(new Obstacle("Rock", 1));
