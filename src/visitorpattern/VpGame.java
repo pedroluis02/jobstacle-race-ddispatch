@@ -8,7 +8,7 @@ import java.util.List;
 
 public class VpGame implements Game {
     RaceCar car;
-    List <VpObject> objects;
+    List<VpObject> objects;
 
     public VpGame() {
         init();
@@ -17,14 +17,13 @@ public class VpGame implements Game {
     @Override
     public void init() {
         car = new RaceCar("Lightning McQueen");
-        objects = new ArrayList<>() {{
-            add(new FreeBlock());
-            add(new Obstacle("Rock", 1));
-            add(new LifePack(1));
-            add(new FreeBlock());
-            add(new Obstacle("Garbage", 1));
-            add(new FreeBlock());
-        }};
+        objects = new ArrayList<>();
+        objects.add(new FreeBlock());
+        objects.add(new Obstacle("Rock", 1));
+        objects.add(new LifePack(1));
+        objects.add(new FreeBlock());
+        objects.add(new Obstacle("Garbage", 1));
+        objects.add(new FreeBlock());
     }
 
     @Override

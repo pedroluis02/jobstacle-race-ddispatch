@@ -1,9 +1,9 @@
 package shared;
 
 public abstract class GameObject {
-    private String name;
+    private final String name;
 
-    public GameObject(String name) {
+    protected GameObject(String name) {
         this.name = name;
     }
 

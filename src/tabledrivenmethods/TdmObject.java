@@ -6,15 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class TdmObject extends GameObject {
-   private final Map<Class<? extends TdmObject>, CollisionMethod<? extends TdmObject>> collisionMap;
+    private final Map<Class<? extends TdmObject>, CollisionMethod<? extends TdmObject>> collisionMap;
 
-   public TdmObject(String name) {
-       super(name);
-       collisionMap = new HashMap<>();
-       registerCollisions();
-   }
+    protected TdmObject(String name) {
+        super(name);
+        collisionMap = new HashMap<>();
+        registerCollisions();
+    }
 
-    protected void registerCollisions() {}
+    protected void registerCollisions() {
+    }
 
     public <T extends TdmObject> void addCollisionWith(Class<T> objectsClass, CollisionMethod<T> objectMethod) {
         collisionMap.put(objectsClass, objectMethod);

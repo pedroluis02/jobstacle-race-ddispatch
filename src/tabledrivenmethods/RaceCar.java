@@ -30,6 +30,7 @@ public class RaceCar extends TdmObject {
         lives += object.getQuantity();
         System.out.println("Good Luck: " + object);
     }
+
     private void collideWithObstacle(Obstacle object) {
         int d = object.getDamage();
         lives -= d;
@@ -37,5 +38,4 @@ public class RaceCar extends TdmObject {
 
         System.out.println("Crashed: " + object);
     }
-
 }
