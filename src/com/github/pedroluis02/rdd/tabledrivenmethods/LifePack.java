@@ -1,4 +1,4 @@
-package tabledrivenmethods;
+package com.github.pedroluis02.rdd.tabledrivenmethods;
 
 public class LifePack extends TdmObject {
     private final int quantity;

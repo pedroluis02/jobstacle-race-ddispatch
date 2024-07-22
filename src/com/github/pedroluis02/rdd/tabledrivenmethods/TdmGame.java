@@ -1,22 +1,22 @@
-package visitorpattern;
+package com.github.pedroluis02.rdd.tabledrivenmethods;
 
-import shared.Game;
+import com.github.pedroluis02.rdd.shared.Game;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class VpGame implements Game {
+public class TdmGame implements Game {
     RaceCar car;
-    List<VpObject> objects;
+    List<TdmObject> objects;
 
-    public VpGame() {
+    public TdmGame() {
         init();
     }
 
     @Override
     public void init() {
-        car = new RaceCar("Lightning McQueen");
+        car = new RaceCar("Lightning McQueen", 2);
         objects = new ArrayList<>();
         objects.add(new FreeBlock());
         objects.add(new Obstacle("Rock", 1));
@@ -28,14 +28,13 @@ public class VpGame implements Game {
 
     @Override
     public void start() {
-        ObjectVisitor visitor = new RaceCarVisitor(car, 2);
-        System.out.println("Race starting: " + visitor + "\n");
-
-        final Iterator<VpObject> it = objects.iterator();
+        System.out.println("Race starting: " + car + "\n");
+        final Iterator<TdmObject> it = objects.iterator();
         do {
-            VpObject d = it.next();
-            d.acceptVisitor(visitor);
+            TdmObject d = it.next();
+            car.collideWith(d);
+            d.collideWith(car);
         } while (it.hasNext());
-        System.out.println("\nRace ending: " + visitor);
+        System.out.println("\nRace ending: " + car);
     }
 }

@@ -1,6 +1,6 @@
-package tabledrivenmethods;
+package com.github.pedroluis02.rdd.tabledrivenmethods;
 
-import shared.GameObject;
+import com.github.pedroluis02.rdd.shared.GameObject;
 
 import java.util.HashMap;
 import java.util.Map;

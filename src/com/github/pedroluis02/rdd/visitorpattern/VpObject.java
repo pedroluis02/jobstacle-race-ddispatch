@@ -1,6 +1,6 @@
-package visitorpattern;
+package com.github.pedroluis02.rdd.visitorpattern;
 
-import shared.GameObject;
+import com.github.pedroluis02.rdd.shared.GameObject;
 
 public abstract class VpObject extends GameObject {
     protected VpObject(String name) {

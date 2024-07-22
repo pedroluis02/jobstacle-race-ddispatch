@@ -1,4 +1,4 @@
-package visitorpattern;
+package com.github.pedroluis02.rdd.visitorpattern;
 
 public class RaceCar extends VpObject {
     public RaceCar(String name) {

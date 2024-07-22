@@ -1,4 +1,4 @@
-package visitorpattern;
+package com.github.pedroluis02.rdd.visitorpattern;
 
 public class LifePack extends VpObject {
     private final int quantity;

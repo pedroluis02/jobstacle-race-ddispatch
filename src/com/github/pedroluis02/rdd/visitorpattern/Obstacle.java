@@ -1,6 +1,6 @@
-package tabledrivenmethods;
+package com.github.pedroluis02.rdd.visitorpattern;
 
-public class Obstacle extends TdmObject {
+public class Obstacle extends VpObject {
     private final int damage;
 
     public Obstacle(String name, int damage) {
@@ -18,11 +18,7 @@ public class Obstacle extends TdmObject {
     }
 
     @Override
-    protected void registerCollisions() {
-        addCollisionWith(RaceCar.class, this::collideWithCar);
-    }
-
-    private void collideWithCar(RaceCar object) {
-        System.out.println(getName() + " was crashed by " + object);
+    protected void acceptVisitor(ObjectVisitor visitor) {
+        visitor.visit(this);
     }
 }

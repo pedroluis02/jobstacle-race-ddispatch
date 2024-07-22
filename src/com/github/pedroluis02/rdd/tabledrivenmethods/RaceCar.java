@@ -1,4 +1,4 @@
-package tabledrivenmethods;
+package com.github.pedroluis02.rdd.tabledrivenmethods;
 
 public class RaceCar extends TdmObject {
     private int lives;
