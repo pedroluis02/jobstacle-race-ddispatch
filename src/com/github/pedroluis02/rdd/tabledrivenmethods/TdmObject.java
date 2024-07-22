@@ -21,13 +21,13 @@ public abstract class TdmObject extends GameObject {
         collisionMap.put(objectsClass, objectMethod);
     }
 
-    public <T extends TdmObject> void collideWith(T otherObject) /*throws Exception*/ {
-        CollisionMethod<T> handler = (CollisionMethod<T>) collisionMap.get(otherObject.getClass());
-        if (handler != null) {
+    public <T extends TdmObject> void collideWith(T otherObject) {
+        CollisionMethod<? extends TdmObject> collisionMethod = collisionMap.get(otherObject.getClass());
+        if (collisionMethod != null) {
+            CollisionMethod<T> handler = (CollisionMethod<T>) collisionMethod;
             handler.collideWith(otherObject);
         } else {
             String message = "Undefined method for " + otherObject.getClass().getName();
-            //throw new Exception(message);
             System.out.println(message);
         }
     }
